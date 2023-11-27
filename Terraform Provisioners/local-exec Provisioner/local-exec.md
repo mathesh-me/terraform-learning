@@ -12,10 +12,9 @@ The `local-exec` provisioner supports the following arguments:
 
 * `environment` - (Optional) A map of environment variables to set before executing `command`. These environment variables are not available to subsequent provisioners or other parts of the Terraform configuration.
 
-* `interpreter_args` - (Optional) A list of arguments to pass to the interpreter specified by `interpreter`. This can be used to specify additional options to the interpreter. This option is only valid when `interpreter` is specified.
+* `when` - (Optional) If provided, specifies when Terraform will execute the command. For example, `when = destroy` specifies that the provisioner will run when the associated resource is destroyed. Refer to Destroy-Time Provisioners for details.
 
-* `on_failure` - (Optional) Behavior when the command fails. Valid values are `continue` (default behavior) and `fail`.
-
+* `quiet` - (Optional) If set to `true`, Terraform will not print the command to be executed to stdout, and will instead print "Suppressed by quiet=true". Note that the output of the command will still be printed in any case.
 
 ### Example Usage
 
