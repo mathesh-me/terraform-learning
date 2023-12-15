@@ -14,7 +14,7 @@ Modules make it easier to:
 Modules are called from within other modules using module blocks. The source argument in a module block tells Terraform where to find the source code for the desired child module.
 
 ```hcl
-module "consul" {
+module "consul" { 
   source = "hashicorp/consul/aws"
   version = "0.0.5"
 
